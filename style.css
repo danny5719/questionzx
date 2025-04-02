@@ -1,0 +1,32 @@
+/* 添加到style部分的末尾 */
+#confirmBtn {
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    color: white;
+}
+
+#regretBtn {
+    background: linear-gradient(45deg, #f44336, #FF9800);
+    color: white;
+}
+
+#confirmBtn:hover {
+    background: linear-gradient(45deg, #388E3C, #689F38);
+}
+
+#regretBtn:hover {
+    background: linear-gradient(45deg, #D32F2F, #F57C00);
+}
+
+/* 调整后悔按钮的尺寸 */
+#regretBtn {
+    padding: 4px 8px;       /* 减小内边距 */
+    font-size: 0.6rem;       /* 减小字体大小 */
+    transform: scale(0.6);   /* 整体缩放90% */
+    transform-origin: center; /* 缩放中心点 */
+}
+
+/* 如果需要更小，可以使用以下尺寸 */
+#regretBtn.smaller {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    transform: scale(0.8);

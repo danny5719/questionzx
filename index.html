@@ -13,7 +13,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
     <title>樊小姐看哪吒2吗</title>
+  <style>
+/* 手机专用修复样式 */
+@media only screen and (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%; /* 禁止Safari自动调整文字 */
+    overflow-x: hidden; /* 防止横向滚动 */
+  }
+  .container {
+    width: 95% !important; /* 强制容器宽度 */
+    padding: 20px !important;
+    margin: 10px auto !important;
+  }
+ 
+  button {
+    padding: 12px 25px !important;
+    font-size: 16px !important;
+  }
+ 
+  .movie-poster {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+</style>
     <style>
         /* 基础样式 */
         body {
@@ -343,6 +369,7 @@
         <p>这部真的很好很好看啊啊！！！</p>
         <p></p>
         
+      
         <div class="buttons">
             <button id="yesBtn">好勒！</button>
             <button id="noBtn">再考虑下🙂</button>
@@ -352,10 +379,10 @@
     </div>
     
     <div class="container hidden" id="successMessage">
-        <h1> 收到了！📣</h1>
-        <p>票已经买了，不见不散！</p>
-        <p>做么，还要想啊 没得想了！ </p>
-      
+        <h1> 系统收到了！📣</h1>
+        <p>Ticket purchased successful！</p>
+        <p>不见不散！ </p>
+        <p>做么，还在犹豫啊 没得犹豫了！ </p>
        <div class="buttons" style="margin-top: 40px;">
             
         <button id="regretBtn">后悔了</button>
@@ -556,7 +583,7 @@
                             40%, 80% { transform: translateX(5px); }
                         }
                     `;
-                    document.head.appendChild(style);
+                   document.head.appendChild(style);
                     
                     setTimeout(() => {
                         confetti.remove();

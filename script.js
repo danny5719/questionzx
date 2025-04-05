@@ -112,3 +112,57 @@ noBtn.addEventListener('click', function(e) {
         noBtn.style.transition = "none";
     }, 400);
 });
+// 检测设备类型并添加相应class
+function adjustButtonsForMobile() {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const buttons = document.querySelector('.buttons');
+  
+  if(isMobile) {
+    buttons.classList.add('mobile-buttons');
+  } else {
+    buttons.classList.add('desktop-buttons');
+  }
+}
+
+// 同时监听屏幕变化
+window.addEventListener('resize', adjustButtonsForMobile);
+window.addEventListener('DOMContentLoaded', adjustButtonsForMobile);
+
+noBtn.addEventListener('click', function(e) {
+  // 获取视口尺寸
+  const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  const viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  
+  // 计算可移动范围（允许完全移出容器）
+  const minX = -this.offsetWidth; // 完全移出左侧
+  const maxX = viewportWidth;     // 完全移出右侧
+  const minY = -this.offsetHeight; // 完全移出上方
+  const maxY = viewportHeight;     // 完全移出下方
+  
+  // 生成随机位置
+  const newX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+  const newY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+  
+  // 应用新位置
+  this.style.left = newX + 'px';
+  this.style.top = newY + 'px';
+  
+  // 修改按钮文本
+  const messages = [
+    "抓不到我！", 
+    "我跑出来了！",
+    "自由的感觉！",
+    "在外面真舒服！",
+    "来抓我呀~",
+    "我自由啦！"
+  ];
+  this.textContent = messages[Math.floor(Math.random() * messages.length)];
+  
+  // 创建烟花效果
+  createFireworks(fireworksContainer, 3);
+});
+// 可以添加抛物线移动效果
+function parabolicMove(element, targetX, targetY) {
+  // 实现抛物线运动算法
+  // ... 
+}
